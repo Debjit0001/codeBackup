@@ -1,0 +1,20 @@
+1. Create an empty array to store the merged and sorted elements.
+2. Initialize two pointers, one for each input array, to the first element.
+3. Compare the elements at the pointers of both input arrays.
+4. Add the smaller element to the end of the merged array and increment the pointer for 
+    the input array from which the element was taken.
+5. Repeat steps 3 and 4 until one of the input arrays is fully traversed.
+6. Append the remaining elements from the non-traversed input array to the end of the  
+    merged array.
+7. Return the merged and sorted array.
+
+
+First we are creating a MergeArray class. In the public section of this class there is 
+a merge function, inside which, we are performing the operations.
+First we have to pass the two input arrays and an empty array to store the merged version.
+Now we Initialize two pointers, one for each input array, to the zeroth element.
+Compare the elements at the pointers of both input arrays and add the smaller element to
+the merged array and increment the pointer for the input array from which the element 
+was taken. We repeat this process until one of the input arrays in fully traversed.
+Now just by appending the remaining elements from the non-traversed input array to end
+end of the merged array we complete the task.

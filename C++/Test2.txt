@@ -1,0 +1,10 @@
+1 Darsh Engineering 2022 88
+2 Hitansh Accountancy 2022 79
+3 Ishank  Tourism 2022 90
+4 Kartik  Tourism 2022 65
+5 Naksh  Engineering 2022 95
+6 Naman  History 2022 88
+7 Veer  Psychology 2022 66
+8 Prateek Engineering 2022 80
+9 Garima Accountancy 2022 82
+10 Sujata History 2022 70
