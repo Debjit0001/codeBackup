@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* depends which class is at the last: position and order of appearance for same type of selector */
+        .yellow {
+            color: yellow;
+        }
+
+        .cred {
+            color: red;
+        }
+
+        .cpurple {
+            color: purple;
+        }
+
+        /* now if different selectors are involved, then comes => Specificity  
+            order: Inline Style > ID Selector > Class/Attribute Selector > Element Selector > Universal Selector*/
+        [data-x=a] {
+            background-color: rgb(206, 243, 243);
+        }
+
+        a.harryclass.rohan-class[href]:hover {
+            color: red;
+        }
+
+        /* to  calculate the specificity value of the selector a.harryclass.rohan-class[href]:hover, you can break down its components:
+            Element selectors: a contributes 1 point.
+            Class selectors: .harryclass and .rohan-class each contributes 10 points, totaling 20 points.
+            Attribute selector: [href] contributes 10 points.
+            Pseudo-class: :hover adds another 10 points.
+            Add up all these values:
+
+        1 (element) + 20 (classes) + 10 (attribute) + 10 (pseudo-class) = 41.*/
+    </style>
+</head>
+
+<body>
+
+    <h1 class="yellow cred cpurple" data-x="a">The Cascade Algorithm </h1>
+
+    <p>
+        CSS stands for Cascading Stylesheets. The cascade is the algorithm for solving conflicts where multiple CSS
+        rules
+        apply to an HTML element. It's the reason that the text of the button styled with the above CSS will be purple.
+
+        Understanding the cascade algorithm helps you understand how the browser resolves conflicts like this. The
+        cascade algorithm has 4 distinct stages.
+    </p>
+    <ol style="text-emphasis: f\;">
+        <li><strong>Position and order of appearrance:</strong> the order in which your CSS rules appearance</li>
+        <li><strong>Specificity:</strong> an algorithm that determines which CSS selector has the strongest match<br>
+            <ul>
+                <li>Universal selector: 0</li>
+                <li>Element selector and pseudo-elements: 1</li>
+                <li>Class/Attribute selector and pseudo-classes: 10</li>
+                <li>ID selectors: 100</li>
+                <li>Inline styles: 1000</li>
+                <li>!important: 10000</li>
+            </ul>
+        </li>
+        <li><strong>Origin:</strong> the order in which CSS appears and where it comes from, whether that is a browser
+            style, CSS from a browser externsion, or your authored CSS</li>
+        <li><strong>Importance:</strong> some CSS rules are weighted more heavily than others, especially with the
+            !important rule type
+            Lets look into all these one by one</li>
+    </ol>
+
+</body>
+
+</html>

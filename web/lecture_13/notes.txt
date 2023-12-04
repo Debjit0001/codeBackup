@@ -1,0 +1,22 @@
+Q. What does Cascading Style Sheet actually mean?
+    The term Style Sheet refers to some kind of sheet or document containing any styling property.
+    like, property -> bgcolor; value -> green;
+
+    CSS works by taking in four factors, listed in order from highest weight to least weight:
+        Origin and importance.
+        Specificity.
+        Order in the file.
+        Inheritance.
+
+- Types of CSS:
+    1. Inline
+    2. Internal
+    3. External
+
+- Selector:
+    A way to target any specific html element and apply the css we want on top of it 
+    types: 
+        element selector: using names of tags like p, h1, article, section etc
+        id selector: <p id="abc"> .. </p> ; #abc {..}
+        class selector: 
+        group selector

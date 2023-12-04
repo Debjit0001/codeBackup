@@ -1,0 +1,4 @@
+div, p { /* selector */
+            color: red; /* declaration */
+            background-color: yellow;
+        }

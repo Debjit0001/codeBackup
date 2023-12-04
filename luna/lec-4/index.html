@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* importing fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&family=Poppins&display=swap');
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        p#first {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* main font, fallback fonts */
+            font-style: italic;
+            font-weight: 400;
+            text-decoration-line: underline;
+        }
+
+        p#imported {
+            font-family: 'Baloo Bhaijaan 2', sans-serif;
+        }
+
+        h2 {
+            text-decoration-line: underline;
+            text-decoration-color: brown;
+            text-decoration-thickness: 5px;
+            /* text-indent: 450px; */
+            text-align: center;
+        }
+
+        .lorem {
+            text-overflow: clip;
+            border: 3px solid rebeccapurple;
+            overflow: hidden;
+            width: 200px;
+            word-break: break-all;
+        }
+
+        a:link {
+            color: blue;
+        }
+
+        a:visited {
+            color: blueviolet;
+        }
+
+        a:hover {
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Fonts</h1>
+        <p id="first">This lecture is on fonts</p>
+        <a href="https://codepen.io/web-dot-dev/pen/yLojraG">fonts visualizer</a>
+        <p id="imported">this is how the imported font looks</p>
+
+        <h2>About fonts</h2>
+
+        <p class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora nostrum doloremque voluptate. Provident, cum sed
+        iure omnis, ratione vel soluta quam molestias delectus eaque, maxime nobis necessitatibus adipisci amet totam
+        veritatis. Quod porro, accusamus ut consectetur ipsam necessitatibus aut fugit.</p>
+    </div>
+</body>
+
+</html>
