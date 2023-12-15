@@ -1,104 +1,45 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-typedef struct node {
-    int val;
-    struct node* next;
-} node;
-
-typedef struct linked_list {
-    node* head;
-    int size;
-} linked_list;
-
-node* init(int val) {
-    node* newNode = (node*) malloc ( sizeof(node) );
-
-    newNode -> val = val;
-    newNode -> next = NULL;
-
-    return newNode;
-}
-
-void insertAtHead(linked_list* list, int val) {
-    node* newNode = init(val);
-
-    if(list->head == NULL){
-        list->head = newNode;
-        list -> size = 1;
-    }
-    else {
-        newNode -> next = list -> head;
-        list -> head = newNode;
-    }
-    list->size++;
-}
-
-void insertAtTail(linked_list* list, int val) {
-    node* temp = list->head;
-    node* newNode = init(val);
-
-    if(list->head == NULL) {
-        list->head = newNode;
-        list -> size = 1;
-        return;
-    }
-
-    while(temp -> next != NULL) 
-        temp = temp->next;
-
-    temp->next = newNode;
-    list->size++;
-}
-
-void insertAt(linked_list* list, int val, int index) {
-    if(index < 0 || index > list->size)
-        return;
-
-    if(index == 0) {
-        insertAtHead(list, val);
-        return ;
-    }
-
-    if(index == list->size) {
-        insertAtTail(list, val);
-    }
-
-    int counter = 0;
-    node* temp = list->head;
-    while(counter++ < index)
-        temp = temp->next;
-
-    node* nextNode = temp->next;
-    node* newNode = init(val);
-
-    temp->next = newNode;
-    newNode->next = nextNode;
-    list->size++;
-}
-
-void display(linked_list* list) {
-    node* temp = list->head;
-
-    while(temp != NULL) {
-        printf("%d -> ", temp->val);
-        temp = temp->next;
-    }
-    printf("NULL \n");
-}
-
-int main(int argc, char const *argv[])
+int main()
 {
-    linked_list list;
-    insertAtTail(&list, 10);
-    insertAtTail(&list, 20);
-    insertAtTail(&list, 30);
-    insertAtTail(&list, 40);
-    insertAtHead(&list, 0);
+    int *packet;
+    int rcv, ack, code[9], gen[4], n, i;
 
-    insertAt(&list, 25, 2);
+    printf("\nenter the number of packets to be transmitted: ");
+    scanf("%d", &n);
 
-    display(&list);
+    packet = (int*) malloc (n * sizeof(int));
+    printf("\nenter %d numbers: \n", n);
     
+    for (i = 0; i < n; i++)
+        scanf("%d", &packet[i]);
+
+    srand(time(NULL));
+    for (i = 0; i < n; i++)
+    {
+        printf("\nsent packet %d: %d", i + 1, packet[i]);
+        rcv = rand() % 2;
+
+        while (rcv != 1) {
+            printf("\n\npacket lost.. resend packet %d: %d", i+1, packet[i]);
+            rcv = rand() % 2;
+        }
+
+        printf("\treceived packet %d: %d", i+1, packet[i]);
+        ack = rand() % 2;
+
+        while(ack != 1) {
+            printf("\tacknowledgement lost.. resend packet %d: %d", i+1, packet[i]);
+            ack = rand() % 2;
+            rcv = rand() % 2;
+            while(rcv != 1) {
+                printf("\n\tpacket lost.. resend packet %d: %d", i=1, packet[i]);
+                rcv = rand() % 2;
+            }
+            printf("\treceived packet %d: %d", i+1, packet[i]);
+        }
+    }
     return 0;
 }
